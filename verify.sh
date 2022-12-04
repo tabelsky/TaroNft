@@ -1,1 +1,1 @@
-npx hardhat verify 0xA00393e2DF1F6C96562AB535356E4a453579Fc9d  'Game Art Gallery' GAG   --network rinkeby
+npx hardhat verify 0x31026dB3Ded024F1F87580eC196f5b88F53a645D  'Taro Gallery' TG  'ipfs://QmX82CsKadhyYcxxqhR1zMkfyuHvVqJHp5J6Mb5hsV7yPr/' 79  --network goerli

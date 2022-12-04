@@ -1,14 +1,19 @@
 import { ethers } from "hardhat";
-import { Contract, Signer, BigNumber } from "ethers";
+import { Contract, Signer} from "ethers";
 import { expect } from "chai";
+
+
+async function extractEvents(response: any) {
+    return (await response.wait()).events;
+  }
 
 
 describe("nft721", function() {
     let nft721: Contract,  owner: Signer, account1: Signer;
     this.beforeEach(async function() {
         [owner, account1] = await ethers.getSigners();
-        const Nft721 = await ethers.getContractFactory("Nft721", owner);
-        nft721 = await Nft721.deploy("Sample Token", "ST");
+        const Nft721 = await ethers.getContractFactory("TaroNft", owner);
+        nft721 = await Nft721.deploy("Sample Token", "ST", "ipfs://hash/", 70);
         
     })
 
@@ -20,24 +25,20 @@ describe("nft721", function() {
 
     it('check get unexisted token', async function() {
         expect(nft721.tokenURI(0)).to.be.revertedWith("token doesn't exists");
-        expect(nft721.tokenURI(1)).to.be.revertedWith("token doesn't exists");
+        expect(nft721.tokenURI(71)).to.be.revertedWith("token doesn't exists");
         
     })
 
-    it('check mint not owner', async function() {
-        expect(nft721.connect(account1).mint(await account1.getAddress(), 'A')).to.be.revertedWith("Ownable: caller is not the owner");
-    }) 
-
-    it("check mint", async function() {
-        const event = (await (await nft721.mint(await owner.getAddress(), 'A')).wait()).events[0];
-        expect(event.args[0]).to.equals('0x0000000000000000000000000000000000000000');
-        expect(event.args[1]).to.equals(await owner.getAddress());
-        expect(event.args[2]).to.equals(BigNumber.from(1));
-    })
 
     it("check get token", async function() {
-        nft721.mint(await owner.getAddress(), "A")
-        expect(await nft721.tokenURI(1)).to.equals("ipfs://A")  
+        expect(await nft721.tokenURI(1)).to.equals("ipfs://hash/1")  
+    })
+
+    it ("check mint", async function() {
+        const result = await nft721.mintTo(await account1.getAddress())
+        const events = (await extractEvents(result))
+        expect(events.length).to.equals(70)
+        
     })
 
 })

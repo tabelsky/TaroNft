@@ -12,16 +12,16 @@ import "./tasks/tasks"
 config()
 
 module.exports = {
-  solidity: "0.8.15",
+  solidity: "0.8.17",
   networks: {
-    rinkeby: {
-      url: process.env.RINKEBY_URL || "",
-      blockGasLimit: 124500000,
+    goerli: {
+      url: process.env.GOERLI_RPC_URL || "",
       accounts:
-        process.env.RINKEBY_PRIVAT_KEY !== undefined
-          ? [process.env.RINKEBY_PRIVAT_KEY]
+        process.env.GOERLI_PRIVAT_KEY !== undefined
+          ? [process.env.GOERLI_PRIVAT_KEY]
           : [],
-    },
+    }
+
   },
 
   contractSizer: {
