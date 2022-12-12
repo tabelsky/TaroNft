@@ -1,7 +1,7 @@
 {
     "defaultNetwork": "goerli",
     "goerli": {
-        "name": "Taro Gallery",
+        "name": "Tarot Gallery",
         "symbol": "TG",
         "contract": "0x31026dB3Ded024F1F87580eC196f5b88F53a645D",
         "base_url": "ipfs://QmX82CsKadhyYcxxqhR1zMkfyuHvVqJHp5J6Mb5hsV7yPr/",

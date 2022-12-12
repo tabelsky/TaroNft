@@ -1,11 +1,13 @@
 import "@nomicfoundation/hardhat-toolbox";
 import {config} from "dotenv";
-import "@nomiclabs/hardhat-waffle";
+import "@nomicfoundation/hardhat-chai-matchers";
+import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-etherscan"
-import "hardhat-gas-reporter"
-import "solidity-coverage"
-import "hardhat-contract-sizer"
-import "./tasks/tasks"
+import "hardhat-gas-reporter";
+import "solidity-coverage";
+import "hardhat-contract-sizer";
+import "./tasks/tasks";
+
 
 
 
@@ -24,6 +26,12 @@ module.exports = {
 
   },
 
+  gasReporter: {
+    currency: "EUR",
+    coinmarketcap: process.env.COIN_CAP_API_KEY || "",
+    enabled: true
+  },
+
   contractSizer: {
     alphaSort: true,
     disambiguatePaths: false,
@@ -33,7 +41,7 @@ module.exports = {
 
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
-  },
+  }
 
 
 };

@@ -2,8 +2,6 @@ import { task } from "hardhat/config";
 import * as config_ from "../config.json";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
-import "@nomiclabs/hardhat-waffle";
-
 const config = (config_ as any);
 const network = process.env.network || config.defaultNetwork;
 const settings = config[network];
