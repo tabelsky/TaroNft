@@ -3,8 +3,8 @@
     "goerli": {
         "name": "Tarot Gallery",
         "symbol": "TG",
-        "contract": "0x31026dB3Ded024F1F87580eC196f5b88F53a645D",
-        "base_url": "ipfs://QmX82CsKadhyYcxxqhR1zMkfyuHvVqJHp5J6Mb5hsV7yPr/",
-        "count": 79
+        "contract": "0xfDbFF35721b65beBbc17C78c3C9821f1FF0F938E",
+        "base_url": "ipfs://QmUdCFhQdD1p4rgwX9yCjAx6pBR25tKwg2h35h6aFcXn1h/",
+        "count": 78
     }
 }

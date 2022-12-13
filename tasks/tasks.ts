@@ -8,7 +8,7 @@ const settings = config[network];
 
 
 async function getNft721(hre: HardhatRuntimeEnvironment) {
-    const Nft721 =  await hre.ethers.getContractFactory("TaroNft");
+    const Nft721 =  await hre.ethers.getContractFactory("TarotNft");
     return await Nft721.attach(settings.contract);   
 }
 

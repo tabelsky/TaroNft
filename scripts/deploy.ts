@@ -6,7 +6,7 @@ const config = (config_ as any);
 async function main() {
 
   const settings = config[config.defaultNetwork]; 
-  const Nft721 = await ethers.getContractFactory('TaroNft');
+  const Nft721 = await ethers.getContractFactory('TarotNft');
   const nft721 = await Nft721.deploy(settings.name, settings.symbol, settings.base_url, settings.count);
   await nft721.deployed();
 

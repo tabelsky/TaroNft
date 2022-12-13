@@ -1,1 +1,1 @@
-npx hardhat verify 0x31026dB3Ded024F1F87580eC196f5b88F53a645D  'Taro Gallery' TG  'ipfs://QmX82CsKadhyYcxxqhR1zMkfyuHvVqJHp5J6Mb5hsV7yPr/' 79  --network goerli
+npx hardhat verify 0xfDbFF35721b65beBbc17C78c3C9821f1FF0F938E  'Tarot Gallery' TG  'ipfs://QmUdCFhQdD1p4rgwX9yCjAx6pBR25tKwg2h35h6aFcXn1h/' 78  --network goerli

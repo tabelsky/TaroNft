@@ -12,7 +12,7 @@ describe("nft721", function() {
     let nft721: Contract,  owner: Signer, account1: Signer;
     this.beforeEach(async function() {
         [owner, account1] = await ethers.getSigners();
-        const Nft721 = await ethers.getContractFactory("TaroNft", owner);
+        const Nft721 = await ethers.getContractFactory("TarotNft", owner);
         nft721 = await Nft721.deploy("Sample Token", "ST", "ipfs://hash/", 70);
         
     })

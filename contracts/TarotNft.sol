@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 
 
-contract TaroNft is ERC721, Ownable  {
+contract TarotNft is ERC721, Ownable  {
 
     uint256 private _count;
     string private _base_url;
